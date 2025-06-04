@@ -9,5 +9,20 @@ function calculateBMI(){
 
   let bmi = weight/height **2;
   
-  document.getElementById("result").innerHTML = `YOUR BMI is: ${bmi.toFixed(2)}`;
+  let message = "";
+
+  if (bmi < 18.5) {
+    message = "Underweight";
+  } 
+  else if (bmi >= 18.5 && bmi <= 24.9) {
+    message = "Healthy";
+  } 
+  else if (bmi >= 25 && bmi <= 29.9) {
+    message = "Overweight";
+  } 
+  else if (bmi >= 30) {
+    message = "Obese";
+  }
+
+  document.getElementById("result").innerHTML = `YOUR BMI is: ${bmi.toFixed(2)} and you are ${message}`;
 }
